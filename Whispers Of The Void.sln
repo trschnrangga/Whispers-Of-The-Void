@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whispers Of The Void", "Whispers Of The Void.csproj", "{AFD5C204-7A43-4A31-8812-579DDC95BDA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFD5C204-7A43-4A31-8812-579DDC95BDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD5C204-7A43-4A31-8812-579DDC95BDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD5C204-7A43-4A31-8812-579DDC95BDA1}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{AFD5C204-7A43-4A31-8812-579DDC95BDA1}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{AFD5C204-7A43-4A31-8812-579DDC95BDA1}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{AFD5C204-7A43-4A31-8812-579DDC95BDA1}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

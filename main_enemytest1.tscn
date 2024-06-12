@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4x7jvoifpfcp"]
+
+[ext_resource type="Script" path="res://main_enemytest1.cs" id="1_joyvm"]
+[ext_resource type="Texture2D" uid="uid://t7vfv4b7tu6v" path="res://Assets/Enemies/enemyEye.png" id="2_4j35j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1jf8"]
+size = Vector2(71.6724, 11.0386)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvxld"]
+atlas = ExtResource("2_4j35j")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6evj"]
+atlas = ExtResource("2_4j35j")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0yw"]
+atlas = ExtResource("2_4j35j")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ru4dw"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_kvxld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6evj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0yw")
+}],
+"loop": true,
+"name": &"jalan",
+"speed": 11.0
+}]
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+scale = Vector2(0.160728, 0.211218)
+platform_floor_layers = 4294967040
+script = ExtResource("1_joyvm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.14713e-06, -2.36722)
+rotation = -3.14159
+scale = Vector2(2.25699, 3.00229)
+shape = SubResource("RectangleShape2D_o1jf8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(-4.7048, 3.69648)
+sprite_frames = SubResource("SpriteFrames_ru4dw")
+animation = &"jalan"
+autoplay = "jalan"
+frame_progress = 0.942296
