@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://g0s454gkxvob"]
+
+[ext_resource type="FontFile" uid="uid://dka324t3wt567" path="res://src/font/Pixellari.ttf" id="1_ehvld"]
+[ext_resource type="Texture2D" uid="uid://c7u6tawcc5ogx" path="res://Assets/UI/map_selection_menu/map-1-map-2.png" id="2_uumm6"]
+[ext_resource type="Script" path="res://src/Script/BtnMap1.cs" id="3_htslv"]
+[ext_resource type="Script" path="res://src/Script/BtnMap2.cs" id="4_82hso"]
+[ext_resource type="Script" path="res://src/Scene/BtnBack.cs" id="5_qjflx"]
+
+[sub_resource type="Theme" id="Theme_88tjp"]
+default_font = ExtResource("1_ehvld")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbrq1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6mv8"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i1sa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04bmn"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="map_selection_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_88tjp")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uumm6")
+
+[node name="MarginContainer" type="MarginContainer" parent="background"]
+layout_mode = 0
+offset_right = 440.0
+offset_bottom = 412.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="background/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="BtnMap1" type="Button" parent="background/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_qbrq1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6mv8")
+text = "Meadow"
+alignment = 0
+script = ExtResource("3_htslv")
+
+[node name="BtnMap2" type="Button" parent="background/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_2i1sa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_04bmn")
+text = "Desert"
+alignment = 0
+script = ExtResource("4_82hso")
+
+[node name="BtnBack" type="Button" parent="background/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_2i1sa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_04bmn")
+text = "Back"
+alignment = 0
+script = ExtResource("5_qjflx")
+
+[connection signal="button_down" from="background/MarginContainer/HBoxContainer/VBoxContainer/BtnMap1" to="background/MarginContainer/HBoxContainer/VBoxContainer/BtnMap1" method="BtnMap1Pressed"]
+[connection signal="button_down" from="background/MarginContainer/HBoxContainer/VBoxContainer/BtnMap2" to="background/MarginContainer/HBoxContainer/VBoxContainer/BtnMap2" method="OnBtnMap2Pressed"]
+[connection signal="button_down" from="background/MarginContainer/HBoxContainer/VBoxContainer/BtnBack" to="background/MarginContainer/HBoxContainer/VBoxContainer/BtnBack" method="OnBtnBackPressed"]
