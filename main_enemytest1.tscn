@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4x7jvoifpfcp"]
+[gd_scene load_steps=10 format=3 uid="uid://b4x7jvoifpfcp"]
 
 [ext_resource type="Script" path="res://main_enemytest1.cs" id="1_joyvm"]
 [ext_resource type="Texture2D" uid="uid://t7vfv4b7tu6v" path="res://Assets/Enemies/enemyEye.png" id="2_4j35j"]
+[ext_resource type="PackedScene" uid="uid://csqrurpogwjp5" path="res://health_bar.tscn" id="3_cybhe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu8ww"]
 radius = 7.34188
@@ -69,5 +70,15 @@ position = Vector2(0, -2.5)
 rotation = 1.5708
 scale = Vector2(1.01449, 1)
 shape = SubResource("CapsuleShape2D_7hs3f")
+
+[node name="healthBar" parent="." instance=ExtResource("3_cybhe")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 27.0
+offset_bottom = -24.0
+grow_horizontal = 2
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

@@ -4,15 +4,20 @@ using System.Collections.Generic;
 
 public partial class main_enemytest1 : CharacterBody2D, IHittable
 {
-    [Export] private int _health = 15;
-    [Export] public float Speed = 50.0f;
+    [Export] private int _eyeHealth = 15;
+    [Export] public float _eyeSpeed = 50.0f;
     [Export] private int _eyeDamage = 5;
 
-	private float flashDuration = 0.1f;
+    public int EyeHealth { get { return _eyeHealth; } set { _eyeHealth = value; } }
+    public float EyeSpeed { get { return _eyeSpeed; } set { _eyeSpeed = value; } }
+    public int EyeDamage { get { return _eyeDamage; } set { _eyeDamage = value; } }
+
+	private float flashDuration = 0.15f;
     private Color _originalColor;
     private AnimatedSprite2D _eyeSprite;
     private Area2D _hurtBox;
-    private NodePath _playerPath = "/root/main/Entities/MainCat"; // Use NodePath for better maintainability
+    private NodePath _playerPath = "/root/main/Entities/MainCat";
+    private healthBar healthbar;
 	private bool bodyEntered = false;
 	private bool canDamage = true;
 
@@ -21,6 +26,8 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
         _eyeSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _originalColor = _eyeSprite.Modulate;
         _hurtBox = GetNode<Area2D>("HurtBox"); // Assume your Area2D node is named "HurtBox"
+        healthbar = GetNode<healthBar>("healthBar");
+        healthbar.InitHealth(EyeHealth);
     }
 
     public override async void _PhysicsProcess(double delta)
@@ -28,7 +35,7 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
         // Move towards the player
         if (GetNode(_playerPath) is CharacterBody2D player)
         {
-            Velocity = Position.DirectionTo(player.Position) * Speed;
+            Velocity = Position.DirectionTo(player.Position) * EyeSpeed;
             MoveAndSlide();
         }
 
@@ -63,12 +70,16 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
 
     public async void TakeDamage(int bulletDamage)
     {
-        _health -= bulletDamage;
+        EyeHealth -= bulletDamage;  
         Flash();
-        if (_health <= 0)
+        if (EyeHealth <= 0)
         {
-            await ToSignal(GetTree().CreateTimer(flashDuration), SceneTreeTimer.SignalName.Timeout);
+            await ToSignal(GetTree().CreateTimer(0.2), SceneTreeTimer.SignalName.Timeout);
             QueueFree();
+        }
+        if (healthbar != null)
+        {
+            healthbar.SetHealth(EyeHealth);
         }
     }
 
