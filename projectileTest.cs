@@ -46,9 +46,9 @@ public partial class projectileTest : Area2D
         if (body is IHittable hittable && !(body is main_kucing2d))
         {
             hittable.TakeDamage(waveDamage); // Apply damage to the hit object
+            QueueFree(); // Remove the projectile after a collision
         }
 
-        QueueFree(); // Remove the projectile after a collision
     }
 
 }

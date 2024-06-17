@@ -37,8 +37,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hs3f"]
-radius = 21.4378
-height = 174.207
+radius = 26.1722
+height = 186.651
 
 [node name="Eye" type="CharacterBody2D"]
 scale = Vector2(0.160728, 0.211218)
@@ -67,6 +67,7 @@ frame_progress = 0.991238
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -2.5)
 rotation = 1.5708
+scale = Vector2(1.01449, 1)
 shape = SubResource("CapsuleShape2D_7hs3f")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

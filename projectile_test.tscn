@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgfvl15nraj7k"]
+
+[ext_resource type="Script" path="res://projectileTest.cs" id="1_t0dtb"]
+[ext_resource type="Texture2D" uid="uid://cku4lpo27xrdo" path="res://shootTEST.png" id="2_gdj7d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wb251"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de88s"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ogt"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh57n"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23gm1"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51yli"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwt4t"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30u7p"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bdd8"]
+atlas = ExtResource("2_gdj7d")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfm40"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de88s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2ogt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh57n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23gm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51yli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwt4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30u7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bdd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="projectileTest" type="Area2D"]
+scale = Vector2(1.24, 1.24)
+script = ExtResource("1_t0dtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15.9032, -0.129032)
+shape = SubResource("CapsuleShape2D_wb251")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3.90323, -0.129032)
+sprite_frames = SubResource("SpriteFrames_lfm40")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

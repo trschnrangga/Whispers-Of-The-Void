@@ -14,6 +14,7 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 
 	private float flashDuration = 0.1f;
 	private bool canShoot = true;
+	private bool canDash = true;
 	private Color catOriginalColor;
 	private AnimatedSprite2D catSprite;
 
@@ -35,7 +36,13 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 
 		if (Input.IsActionPressed("dash"))
 		{
-			// Dash();
+			if (canDash)
+			{
+				canDash = false;
+				Dash();
+				await ToSignal(GetTree().CreateTimer(1.5), SceneTreeTimer.SignalName.Timeout);
+				canDash = true;
+			}
 		}
 
 		if (canShoot)
@@ -54,7 +61,7 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
         GetInput();
         MoveAndSlide();
 		Directionals();
-		GD.Print(CatHealth);
+		//GD.Print(CatHealth);
 
     }
 
@@ -92,8 +99,8 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	public async void Dash()
 	{
 		CatSpeed = 400;
-		await ToSignal(GetTree().CreateTimer(0.15), SceneTreeTimer.SignalName.Timeout);
-		CatSpeed = 125.0f;
+		await ToSignal(GetTree().CreateTimer(0.125), SceneTreeTimer.SignalName.Timeout);
+		CatSpeed = 70.0f;
 	}
 	
 	public void ShootWave()

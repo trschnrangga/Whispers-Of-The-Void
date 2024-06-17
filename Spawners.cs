@@ -20,7 +20,7 @@ public partial class Spawners : Node2D
 
 	public void SpawnCharacter()
 	{
-		Vector2 vector2 = new Vector2(1000, 0);
+		Vector2 vector2 = new Vector2(500, 0);
 		RandomNumberGenerator randnum = new RandomNumberGenerator();
 		var randz = randnum.RandfRange(0, 2*(float)Math.PI);
 		var instance = scene.Instantiate<CharacterBody2D>();
