@@ -25,7 +25,7 @@ public partial class Spawners : Node2D
 		var randz = randnum.RandfRange(0, 2*(float)Math.PI);
 		var instance = scene.Instantiate<CharacterBody2D>();
 		AddChild(instance);
-		instance.Position = GetNode<CharacterBody2D>("/root/main/Entities/MainCat").Position + vector2.Rotated(randz);
+		instance.Position = GetNode<CharacterBody2D>("/root/desert_map/Entities/MainCat").Position + vector2.Rotated(randz);
 		
 	}
 }
