@@ -476,6 +476,8 @@ script = ExtResource("3_772lp")
 
 [node name="MainCat" parent="Entities" instance=ExtResource("4_tjipe")]
 position = Vector2(5, -2)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Entities/MainCat"]
 position = Vector2(-5, 1)
@@ -497,3 +499,5 @@ script = ExtResource("7_trtpe")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.56
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

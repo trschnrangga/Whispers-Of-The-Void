@@ -36,7 +36,11 @@ animations = [{
 }]
 
 [node name="CharacterBody2D2" type="CharacterBody2D"]
+z_index = 100
 scale = Vector2(0.160728, 0.211218)
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
 platform_floor_layers = 4294967040
 script = ExtResource("1_joyvm")
 
