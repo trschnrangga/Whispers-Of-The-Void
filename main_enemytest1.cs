@@ -8,7 +8,7 @@ public partial class main_enemytest1 : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 
-		var player = GetNode<CharacterBody2D>("/root/main/Entities/MainCat");
+		var player = GetNode<CharacterBody2D>("/root/desert_map/Entities/MainCat");
 		Velocity = Position.DirectionTo(player.Position) * Speed;
 		MoveAndSlide();
 	}

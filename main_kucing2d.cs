@@ -8,24 +8,24 @@ public partial class main_kucing2d : CharacterBody2D
 	public enum Direction {right, left, idle}
 	private Direction lastDirection = Direction.idle;
 	public void GetInput()
-    {
+	{
 
-        Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-        Velocity = inputDirection * Speed;
+		Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
+		Velocity = inputDirection * Speed;
 		Velocity.Normalized();
 
 		if (Input.IsActionPressed("dash"))
 		{
 			// Dash();
 		}
-    }
-    public override void _PhysicsProcess(double delta)
-    {
-        GetInput();
-        MoveAndSlide();
+	}
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();
+		MoveAndSlide();
 		Directionals();
 
-    }
+	}
 
 	public void Directionals()
 	{
