@@ -45,14 +45,18 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 678.0
+offset_bottom = 381.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.631232, 0.642398)
 theme = SubResource("Theme_86bch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1079.0
+offset_right = 1994.0
+offset_bottom = 1099.0
+scale = Vector2(1.02, 1.02)
 texture = ExtResource("2_so3u2")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -60,6 +64,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 76.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 100

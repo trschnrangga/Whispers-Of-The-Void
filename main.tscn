@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://Spawners.cs" id="4_payk5"]
 [ext_resource type="PackedScene" uid="uid://b4x7jvoifpfcp" path="res://Scenes/main_enemytest1.tscn" id="4_xujx4"]
 [ext_resource type="Script" path="res://Scripts-Scenes/Enemy.cs" id="6_hkc35"]
-[ext_resource type="PackedScene" uid="uid://cyriryu5la2ke" path="res://score_text.tscn" id="9_gqh8k"]
-[ext_resource type="PackedScene" uid="uid://b12tyk3oaf4dy" path="res://score_manager.tscn" id="10_7x66e"]
+[ext_resource type="PackedScene" uid="uid://cu71o3tryg66n" path="res://score_text.tscn" id="9_gqh8k"]
+[ext_resource type="PackedScene" uid="uid://coohf5vpc345o" path="res://score_manager.tscn" id="10_7x66e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edl04"]
 texture = ExtResource("3_6qyso")

@@ -20,12 +20,13 @@ public partial class Spawners : Node2D
 
 	public void SpawnCharacter()
 	{
+		Node sceneRoot = GetTree().CurrentScene; //Get reference to current scene tree
 		Vector2 vector2 = new Vector2(500, 0);
 		RandomNumberGenerator randnum = new RandomNumberGenerator();
 		var randz = randnum.RandfRange(0, 2*(float)Math.PI);
 		var instance = scene.Instantiate<CharacterBody2D>();
 		AddChild(instance);
-		instance.Position = GetNode<CharacterBody2D>("/root/desert_map/Entities/MainCat").Position + vector2.Rotated(randz);
+		instance.Position = sceneRoot.GetNode<CharacterBody2D>("Entities/MainCat").Position + vector2.Rotated(randz);
 		
 	}
 }

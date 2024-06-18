@@ -17,40 +17,42 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
     private Color _originalColor;
     private AnimatedSprite2D _eyeSprite;
     private Area2D _hurtBox;
-    private NodePath _playerPath = "/root/main/Entities/MainCat";
+    private CharacterBody2D _player;
     private healthBar healthbar;
     private ScoreManager _scoreManager;
 	private bool bodyEntered = false;
-	private bool canDamage = true;
+	private bool canDamageOverlapping = true;
 
     public override void _Ready()
     {
+        Node sceneRoot = GetTree().CurrentScene;
+        _player = sceneRoot.GetNode<CharacterBody2D>("Entities/MainCat");
         _eyeSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _originalColor = _eyeSprite.Modulate;
         _hurtBox = GetNode<Area2D>("HurtBox"); // Assume your Area2D node is named "HurtBox"
         healthbar = GetNode<healthBar>("healthBar");
         healthbar.InitHealth(EyeHealth);
-        _scoreManager = GetNode<ScoreManager>("/root/main/ScoreManager");
+        _scoreManager = sceneRoot.GetNode<ScoreManager>("ScoreManager");
 
     }
 
     public override async void _PhysicsProcess(double delta)
     {
         // Move towards the player
-        if (GetNode(_playerPath) is CharacterBody2D player)
+        if (_player is CharacterBody2D player)
         {
             Velocity = Position.DirectionTo(player.Position) * EyeSpeed;
             MoveAndSlide();
         }
 
-        if (bodyEntered && canDamage)
+        if (bodyEntered && canDamageOverlapping)
 		{
-			if (canDamage)
+			if (canDamageOverlapping)
 			{
-				canDamage = false;
+				canDamageOverlapping = false;
 				CheckOverlappingBodies();
 				await ToSignal(GetTree().CreateTimer(1.25), SceneTreeTimer.SignalName.Timeout);
-				canDamage = true;
+				canDamageOverlapping = true;
 			}
 		}
 		

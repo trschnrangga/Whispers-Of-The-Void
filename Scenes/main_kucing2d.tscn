@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Scripts-Scenes/Player/main_kucing2d.cs" id="1_fgyc6"]
 [ext_resource type="Texture2D" uid="uid://bj1omyg6qvld7" path="res://Assets/Cat/kucingIDLE.png" id="1_jnhhv"]
 [ext_resource type="Texture2D" uid="uid://cwvkk54jb32k3" path="res://Assets/Cat/kucingJALAN.png" id="2_0dbfi"]
-[ext_resource type="PackedScene" uid="uid://csqrurpogwjp5" path="res://health_bar.tscn" id="4_peda5"]
+[ext_resource type="PackedScene" uid="uid://04o0gq1q48ir" path="res://health_bar.tscn" id="4_peda5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87s0d"]
-radius = 2.02224
-height = 6.86342
+radius = 2.35929
+height = 8.2361
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpgey"]
 atlas = ExtResource("1_jnhhv")
@@ -54,11 +54,14 @@ animations = [{
 bg_color = Color(0.890196, 0, 0, 1)
 
 [node name="MainCat" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 platform_floor_layers = 4294967040
 script = ExtResource("1_fgyc6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2.27374e-13)
 rotation = 1.5708
 scale = Vector2(2.967, 2.914)
 shape = SubResource("CapsuleShape2D_87s0d")
@@ -73,6 +76,7 @@ autoplay = "IDLE"
 frame_progress = 0.834526
 
 [node name="healthBar" parent="." instance=ExtResource("4_peda5")]
+z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

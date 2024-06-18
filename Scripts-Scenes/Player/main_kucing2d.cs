@@ -23,12 +23,16 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	private Color catOriginalColor;
 	private AnimatedSprite2D catSprite;
 	private healthBar healthbar;
-
+	private Node sceneRoot;
 	public enum Direction {right, left, idle}
 	private Direction lastDirection = Direction.idle;
+	private Vector2 headleft, headright;
 
     public override void _Ready()
     {
+		headleft = new Vector2(-1, 1);
+		headright = new Vector2(1, 1);
+		sceneRoot = GetTree().CurrentScene;
         catSprite = GetNode<AnimatedSprite2D>("Cat");
 		catOriginalColor = catSprite.Modulate;
 		healthbar = GetNode<healthBar>("healthBar");
@@ -38,6 +42,7 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	public void Directionals()
 	{
 		AnimatedSprite2D v_sprite = GetNode<AnimatedSprite2D>("Cat");
+		CharacterBody2D kucing = GetNode<CharacterBody2D>(".");
 		//Move Animation
 		if (Velocity.X > 1 || Velocity.X < -1 || Velocity.Y > 1 || Velocity.Y < -1){
 			v_sprite.Animation = "jalan";
@@ -125,18 +130,18 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	{
 		PackedScene soundWave = ResourceLoader.Load<PackedScene>("res://Scenes/projectile_test.tscn");
 		var newSoundWave = soundWave.Instantiate<Node2D>();
-		var player = GetNode<CharacterBody2D>("/root/main/Entities/MainCat");
+		var player = sceneRoot.GetNode<CharacterBody2D>("Entities/MainCat");
 		newSoundWave.GlobalPosition = player.GlobalPosition;
-		GetTree().Root.GetNode("/root/main/Entities").AddChild(newSoundWave);
+		sceneRoot.GetNode(".").AddChild(newSoundWave);
 	}
 
 	public void Slash()
 	{
 		PackedScene slash = ResourceLoader.Load<PackedScene>("res://Scenes/slash_test.tscn");
 		var newSlash = slash.Instantiate<Node2D>();
-		var player = GetNode<CharacterBody2D>("/root/main/Entities/MainCat");
+		var player = sceneRoot.GetNode<CharacterBody2D>("Entities/MainCat");
 		newSlash.GlobalPosition = Vector2.Zero;
-		GetTree().Root.GetNode("main/Entities/MainCat").AddChild(newSlash);
+		sceneRoot.GetNode("Entities/MainCat").AddChild(newSlash);
 		
 	}	
 	public void TakeDamage(int damage)

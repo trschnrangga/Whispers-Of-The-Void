@@ -5,9 +5,11 @@ public partial class ScoreManager : Node
 {
 	private int _score = 0;
 	private ScoreText _scoreText;
+	private Node sceneRoot;
 	public override void _Ready()
 	{
-		_scoreText = GetNode<ScoreText>("/root/main/CanvasLayer/ScoreText");
+		sceneRoot = GetTree().CurrentScene;
+		_scoreText = sceneRoot.GetNode<ScoreText>("CanvasLayer/ScoreText");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

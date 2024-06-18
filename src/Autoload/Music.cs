@@ -7,6 +7,7 @@ public partial class Music : AudioStreamPlayer
 	public override void _Ready()
 	{
 		Stream = GD.Load<AudioStream>("res://src/bgm/2019-08-25_-_8bit-Smooth_Presentation_-_David_Fesliyan.mp3");
+		VolumeDb = -20;
 		Play();
 	}
 

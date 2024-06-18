@@ -60,7 +60,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 9.0
 }]
 
 [node name="projectileTest" type="Area2D"]
@@ -72,13 +72,13 @@ position = Vector2(16.9279, -0.626959)
 shape = SubResource("CircleShape2D_bc36u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 position = Vector2(16.9279, -1.25392)
 rotation = -0.253073
 scale = Vector2(0.48, 0.48)
 sprite_frames = SubResource("SpriteFrames_lfm40")
 autoplay = "default"
-frame = 6
-frame_progress = 1.0
+frame_progress = 0.506287
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

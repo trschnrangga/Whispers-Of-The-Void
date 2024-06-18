@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyriryu5la2ke"]
+[gd_scene load_steps=3 format=3 uid="uid://cu71o3tryg66n"]
 
 [ext_resource type="FontFile" uid="uid://cu2jsnykpgg3n" path="res://Assets/Fonts/Pixellari.ttf" id="1_2b2hx"]
 [ext_resource type="Script" path="res://ScoreText.cs" id="2_dwnto"]
