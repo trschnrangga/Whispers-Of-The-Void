@@ -123,7 +123,7 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	
 	public void ShootWave()
 	{
-		PackedScene soundWave = ResourceLoader.Load<PackedScene>("res://projectile_test.tscn");
+		PackedScene soundWave = ResourceLoader.Load<PackedScene>("res://Scenes/projectile_test.tscn");
 		var newSoundWave = soundWave.Instantiate<Node2D>();
 		var player = GetNode<CharacterBody2D>("/root/main/Entities/MainCat");
 		newSoundWave.GlobalPosition = player.GlobalPosition;
@@ -132,7 +132,7 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 
 	public void Slash()
 	{
-		PackedScene slash = ResourceLoader.Load<PackedScene>("res://slash_test.tscn");
+		PackedScene slash = ResourceLoader.Load<PackedScene>("res://Scenes/slash_test.tscn");
 		var newSlash = slash.Instantiate<Node2D>();
 		var player = GetNode<CharacterBody2D>("/root/main/Entities/MainCat");
 		newSlash.GlobalPosition = Vector2.Zero;

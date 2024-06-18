@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://5kgpts655gx8"]
 
-[ext_resource type="Script" path="res://Scripts/Player/main_kucing2d.cs" id="1_fgyc6"]
+[ext_resource type="Script" path="res://Scripts-Scenes/Player/main_kucing2d.cs" id="1_fgyc6"]
 [ext_resource type="Texture2D" uid="uid://bj1omyg6qvld7" path="res://Assets/Cat/kucingIDLE.png" id="1_jnhhv"]
 [ext_resource type="Texture2D" uid="uid://cwvkk54jb32k3" path="res://Assets/Cat/kucingJALAN.png" id="2_0dbfi"]
 [ext_resource type="PackedScene" uid="uid://csqrurpogwjp5" path="res://health_bar.tscn" id="4_peda5"]

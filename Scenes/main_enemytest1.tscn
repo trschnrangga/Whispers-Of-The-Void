@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4x7jvoifpfcp"]
+[gd_scene load_steps=11 format=3 uid="uid://b4x7jvoifpfcp"]
 
-[ext_resource type="Script" path="res://main_enemytest1.cs" id="1_joyvm"]
+[ext_resource type="Script" path="res://Scripts-Scenes/Enemies/EyeBat/main_enemytest1.cs" id="1_joyvm"]
 [ext_resource type="Texture2D" uid="uid://t7vfv4b7tu6v" path="res://Assets/Enemies/enemyEye.png" id="2_4j35j"]
 [ext_resource type="PackedScene" uid="uid://csqrurpogwjp5" path="res://health_bar.tscn" id="3_cybhe"]
 
@@ -41,6 +41,9 @@ animations = [{
 radius = 26.1722
 height = 186.651
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4u35"]
+bg_color = Color(0.420402, 0.72088, 0.443088, 1)
+
 [node name="Eye" type="CharacterBody2D"]
 scale = Vector2(0.160728, 0.211218)
 motion_mode = 1
@@ -75,10 +78,12 @@ shape = SubResource("CapsuleShape2D_7hs3f")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -28.0
-offset_top = -28.0
-offset_right = 27.0
-offset_bottom = -24.0
+offset_left = -31.1085
+offset_top = -28.4067
+offset_right = -14.1085
+offset_bottom = -27.4067
 grow_horizontal = 2
+scale = Vector2(3.715, 3.715)
+theme_override_styles/fill = SubResource("StyleBoxFlat_h4u35")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

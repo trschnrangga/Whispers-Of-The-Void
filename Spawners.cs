@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 public partial class Spawners : Node2D
 {
-	public PackedScene scene = ResourceLoader.Load<PackedScene>("res://main_enemytest1.tscn");
+	public PackedScene scene = ResourceLoader.Load<PackedScene>("res://Scenes/main_enemytest1.tscn");
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

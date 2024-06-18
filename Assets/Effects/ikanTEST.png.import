@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8mn4e0m0f03o"
-path="res://.godot/imported/slashTEST.png-f8215b211384460daaae8d40c8cb2164.ctex"
+uid="uid://q4ri6vree1pg"
+path="res://.godot/imported/ikanTEST.png-99d5ae5215f95cb69d7b419c69b09e24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://slashTEST.png"
-dest_files=["res://.godot/imported/slashTEST.png-f8215b211384460daaae8d40c8cb2164.ctex"]
+source_file="res://Assets/Effects/ikanTEST.png"
+dest_files=["res://.godot/imported/ikanTEST.png-99d5ae5215f95cb69d7b419c69b09e24.ctex"]
 
 [params]
 

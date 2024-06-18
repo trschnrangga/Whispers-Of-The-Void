@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class main_enemytest1 : CharacterBody2D, IHittable
+public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
 {
     [Export] private int _eyeHealth = 15;
     [Export] public float _eyeSpeed = 50.0f;
@@ -13,11 +13,13 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
     public int EyeDamage { get { return _eyeDamage; } set { _eyeDamage = value; } }
 
 	private float flashDuration = 0.15f;
+    private int _scoreValue = 5;
     private Color _originalColor;
     private AnimatedSprite2D _eyeSprite;
     private Area2D _hurtBox;
     private NodePath _playerPath = "/root/main/Entities/MainCat";
     private healthBar healthbar;
+    private ScoreManager _scoreManager;
 	private bool bodyEntered = false;
 	private bool canDamage = true;
 
@@ -28,6 +30,8 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
         _hurtBox = GetNode<Area2D>("HurtBox"); // Assume your Area2D node is named "HurtBox"
         healthbar = GetNode<healthBar>("healthBar");
         healthbar.InitHealth(EyeHealth);
+        _scoreManager = GetNode<ScoreManager>("/root/main/ScoreManager");
+
     }
 
     public override async void _PhysicsProcess(double delta)
@@ -73,8 +77,9 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
         EyeHealth -= bulletDamage;  
         Flash();
         if (EyeHealth <= 0)
-        {
-            await ToSignal(GetTree().CreateTimer(0.2), SceneTreeTimer.SignalName.Timeout);
+        {   
+            await ToSignal(GetTree().CreateTimer(flashDuration), SceneTreeTimer.SignalName.Timeout);
+            _scoreManager.AddScore(GetScoreValue());
             QueueFree();
         }
         if (healthbar != null)
@@ -100,5 +105,10 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable
 			await ToSignal(GetTree().CreateTimer(1), SceneTreeTimer.SignalName.Timeout);
 			bodyEntered = true;
         }
+    }
+
+    public int GetScoreValue()
+    {
+        return _scoreValue;
     }
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caveicpadhntl"
-path="res://.godot/imported/pixel sky.jpg-d54384a36ba33ee438dc7df3e84acc8f.ctex"
+uid="uid://cku4lpo27xrdo"
+path="res://.godot/imported/shootTEST.png-58396b9fd57b956f546278bdf7e5bc6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixel sky.jpg"
-dest_files=["res://.godot/imported/pixel sky.jpg-d54384a36ba33ee438dc7df3e84acc8f.ctex"]
+source_file="res://Assets/Effects/shootTEST.png"
+dest_files=["res://.godot/imported/shootTEST.png-58396b9fd57b956f546278bdf7e5bc6d.ctex"]
 
 [params]
 

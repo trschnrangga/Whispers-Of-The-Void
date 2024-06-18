@@ -19,7 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-mouse_cursor/custom_image="res://cursor.png"
+mouse_cursor/custom_image="res://Assets/Cursor/cursor.png"
 
 [dotnet]
 

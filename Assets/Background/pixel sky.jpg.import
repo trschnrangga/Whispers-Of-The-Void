@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnxsin5tbagn8"
-path="res://.godot/imported/grass tile.png-1230d2ffc935df792883647005a27567.ctex"
+uid="uid://caveicpadhntl"
+path="res://.godot/imported/pixel sky.jpg-7f83accdcdd8582b6206146ed7175954.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grass tile.png"
-dest_files=["res://.godot/imported/grass tile.png-1230d2ffc935df792883647005a27567.ctex"]
+source_file="res://Assets/Background/pixel sky.jpg"
+dest_files=["res://.godot/imported/pixel sky.jpg-7f83accdcdd8582b6206146ed7175954.ctex"]
 
 [params]
 

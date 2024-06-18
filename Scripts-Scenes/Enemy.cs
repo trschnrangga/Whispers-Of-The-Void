@@ -11,3 +11,8 @@ public partial class Enemy : Node2D
 
 	}
 }
+
+public interface IScoreable
+{
+	int GetScoreValue();
+}

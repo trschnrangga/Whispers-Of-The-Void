@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8r67ua4hahg4"]
+[gd_scene load_steps=13 format=3 uid="uid://b8r67ua4hahg4"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_xf17e"]
-[ext_resource type="Texture2D" uid="uid://bqxww0nqi20gc" path="res://Assets/bgblack.png" id="2_rcybu"]
-[ext_resource type="PackedScene" uid="uid://5kgpts655gx8" path="res://Scripts/Player/main_kucing2d.tscn" id="2_rwtfc"]
-[ext_resource type="Texture2D" uid="uid://dhvqj2md2v8d" path="res://Assets/grassNEWBG.png" id="3_6qyso"]
-[ext_resource type="Script" path="res://Entities.cs" id="3_11tsy"]
+[ext_resource type="Texture2D" uid="uid://bqxww0nqi20gc" path="res://Assets/Background/bgblack.png" id="2_rcybu"]
+[ext_resource type="PackedScene" uid="uid://5kgpts655gx8" path="res://Scenes/main_kucing2d.tscn" id="2_rwtfc"]
+[ext_resource type="Texture2D" uid="uid://dhvqj2md2v8d" path="res://Assets/Background/grassNEWBG.png" id="3_6qyso"]
+[ext_resource type="Script" path="res://Scripts-Scenes/Entities.cs" id="3_11tsy"]
 [ext_resource type="Script" path="res://Spawners.cs" id="4_payk5"]
-[ext_resource type="PackedScene" uid="uid://b4x7jvoifpfcp" path="res://main_enemytest1.tscn" id="4_xujx4"]
-[ext_resource type="Script" path="res://Enemy.cs" id="6_hkc35"]
+[ext_resource type="PackedScene" uid="uid://b4x7jvoifpfcp" path="res://Scenes/main_enemytest1.tscn" id="4_xujx4"]
+[ext_resource type="Script" path="res://Scripts-Scenes/Enemy.cs" id="6_hkc35"]
+[ext_resource type="PackedScene" uid="uid://cyriryu5la2ke" path="res://score_text.tscn" id="9_gqh8k"]
+[ext_resource type="PackedScene" uid="uid://b12tyk3oaf4dy" path="res://score_manager.tscn" id="10_7x66e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edl04"]
 texture = ExtResource("3_6qyso")
@@ -31,10 +33,10 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -883.0
-offset_top = -524.0
-offset_right = 61197.0
-offset_bottom = 34396.0
+offset_left = -1720.0
+offset_top = -926.0
+offset_right = 106367.0
+offset_bottom = 58154.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.03, 0.03)
@@ -78,5 +80,14 @@ wait_time = 1.154
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" parent="CanvasLayer" instance=ExtResource("9_gqh8k")]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 57.0
+offset_bottom = 30.0
+scale = Vector2(2.905, 2.905)
+
+[node name="ScoreManager" parent="." instance=ExtResource("10_7x66e")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
