@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://capvotn06i8g8"]
+
+[ext_resource type="Script" path="res://Scripts-Scenes/Attack-Projectiles/Ranged Projectile/projectileTest.cs" id="1_f2bwo"]
+[ext_resource type="Texture2D" uid="uid://q4ri6vree1pg" path="res://Assets/Effects/ikanTEST.png" id="2_emtl3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bc36u"]
+radius = 6.89655
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq5rb"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6thw"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4pjd"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pmt8"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om1ro"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lttt"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xu25"]
+atlas = ExtResource("2_emtl3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfm40"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq5rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6thw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4pjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pmt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om1ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lttt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xu25")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="projectileTest" type="Area2D"]
+scale = Vector2(1.595, 1.595)
+script = ExtResource("1_f2bwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.9279, -0.626959)
+shape = SubResource("CircleShape2D_bc36u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(16.9279, -1.25392)
+rotation = -0.253073
+scale = Vector2(0.48, 0.48)
+sprite_frames = SubResource("SpriteFrames_lfm40")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,16 +1,21 @@
 using Godot;
 using System;
 
-public partial class Entities : CharacterBody2D
+public partial class ScoreText : Label
 {
-
-	// Called when the node enters the scene tree for the first time.
+	Label scoreNum;
 	public override void _Ready()
 	{
+		scoreNum = GetNode<Label>("ScoreNumber");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+	}
+
+	public void UpdateScore(string score)
+	{
+		scoreNum.Text = score;
 	}
 }

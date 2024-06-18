@@ -66,3 +66,4 @@ public partial class main_kucing2d : CharacterBody2D
 	}
 	 
 }
+

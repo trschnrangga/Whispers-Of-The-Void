@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caveicpadhntl"
-path="res://.godot/imported/pixel sky.jpg-d54384a36ba33ee438dc7df3e84acc8f.ctex"
+uid="uid://dhvqj2md2v8d"
+path="res://.godot/imported/grassNEWBG.png-46d0f4a8f0f0cedda5ec401217cadedb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixel sky.jpg"
-dest_files=["res://.godot/imported/pixel sky.jpg-d54384a36ba33ee438dc7df3e84acc8f.ctex"]
+source_file="res://Assets/Background/grassNEWBG.png"
+dest_files=["res://.godot/imported/grassNEWBG.png-46d0f4a8f0f0cedda5ec401217cadedb.ctex"]
 
 [params]
 

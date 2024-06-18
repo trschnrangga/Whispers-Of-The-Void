@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 public partial class Spawners : Node2D
 {
-	public PackedScene scene = ResourceLoader.Load<PackedScene>("res://main_enemytest1.tscn");
+	public PackedScene scene = ResourceLoader.Load<PackedScene>("res://Scenes/main_enemytest1.tscn");
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,7 +20,7 @@ public partial class Spawners : Node2D
 
 	public void SpawnCharacter()
 	{
-		Vector2 vector2 = new Vector2(1000, 0);
+		Vector2 vector2 = new Vector2(500, 0);
 		RandomNumberGenerator randnum = new RandomNumberGenerator();
 		var randz = randnum.RandfRange(0, 2*(float)Math.PI);
 		var instance = scene.Instantiate<CharacterBody2D>();

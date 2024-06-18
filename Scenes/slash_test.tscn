@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://d5b56gdh0v85"]
+
+[ext_resource type="Script" path="res://Scripts-Scenes/Attack-Projectiles/Slash/slashTEST.cs" id="1_cjhae"]
+[ext_resource type="Texture2D" uid="uid://8mn4e0m0f03o" path="res://Assets/Effects/slashTEST.png" id="2_msijw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ycoqr"]
+radius = 12.6203
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i08nr"]
+atlas = ExtResource("2_msijw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srd5v"]
+atlas = ExtResource("2_msijw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfpiq"]
+atlas = ExtResource("2_msijw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jps0"]
+atlas = ExtResource("2_msijw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2aen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i08nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srd5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfpiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jps0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="slashTEST" type="Area2D"]
+script = ExtResource("1_cjhae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 0)
+scale = Vector2(1.18857, 1.0335)
+shape = SubResource("CircleShape2D_ycoqr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13, 0)
+sprite_frames = SubResource("SpriteFrames_g2aen")
+autoplay = "default"
+frame_progress = 0.233203
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

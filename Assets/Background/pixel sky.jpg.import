@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqxww0nqi20gc"
-path="res://.godot/imported/bgblack.png-5e6a30c8059695c2e4f00ea1ebf6d1a2.ctex"
+uid="uid://caveicpadhntl"
+path="res://.godot/imported/pixel sky.jpg-7f83accdcdd8582b6206146ed7175954.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bgblack.png"
-dest_files=["res://.godot/imported/bgblack.png-5e6a30c8059695c2e4f00ea1ebf6d1a2.ctex"]
+source_file="res://Assets/Background/pixel sky.jpg"
+dest_files=["res://.godot/imported/pixel sky.jpg-7f83accdcdd8582b6206146ed7175954.ctex"]
 
 [params]
 
