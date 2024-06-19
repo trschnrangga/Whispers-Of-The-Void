@@ -40,6 +40,7 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
 
 	public override async void _PhysicsProcess(double delta)
 	{
+		// flip horizontally 
 		if (Velocity.X > 0)
 		{
 			_eyeSprite.FlipH = true;
