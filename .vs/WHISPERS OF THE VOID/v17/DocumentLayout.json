@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\scripts-scenes\\enemies\\eyebat\\main_enemytest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:scripts-scenes\\enemies\\eyebat\\main_enemytest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Area.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\BtnQuitGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +19,24 @@
       "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\main_kucing2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:main_kucing2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\main_enemytest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:main_enemytest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\spawners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:spawners.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|d:\\coding\\pbo\\godot\\whispers of the void\\whispers-of-the-void\\entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFD5C204-7A43-4A31-8812-579DDC95BDA1}|Whispers Of The Void.csproj|solutionrelative:entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\main_kucing2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main_kucing2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\main_enemytest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main_enemytest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -53,21 +57,40 @@
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Area.cs",
-              "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Area.cs",
-              "RelativeDocumentMoniker": "Area.cs",
-              "ToolTip": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Area.cs",
-              "RelativeToolTip": "Area.cs",
+              "Title": "main_enemytest1.cs",
+              "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Scripts-Scenes\\Enemies\\EyeBat\\main_enemytest1.cs",
+              "RelativeDocumentMoniker": "Scripts-Scenes\\Enemies\\EyeBat\\main_enemytest1.cs",
+              "ToolTip": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Scripts-Scenes\\Enemies\\EyeBat\\main_enemytest1.cs",
+              "RelativeToolTip": "Scripts-Scenes\\Enemies\\EyeBat\\main_enemytest1.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T15:08:27.505Z",
+              "WhenOpened": "2024-06-19T14:02:58.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Area.cs",
+              "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Area.cs",
+              "RelativeDocumentMoniker": "Area.cs",
+              "ToolTip": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Area.cs",
+              "RelativeToolTip": "Area.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T15:08:27.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "BtnQuitGame.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\BtnQuitGame.cs",
               "RelativeDocumentMoniker": "BtnQuitGame.cs",
@@ -75,12 +98,11 @@
               "RelativeToolTip": "BtnQuitGame.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T14:31:54.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T14:31:54.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "main_kucing2d.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\main_kucing2d.cs",
               "RelativeDocumentMoniker": "main_kucing2d.cs",
@@ -92,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "main.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\main.cs",
               "RelativeDocumentMoniker": "main.cs",
@@ -104,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Entities.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Entities.cs",
               "RelativeDocumentMoniker": "Entities.cs",
@@ -116,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "main_enemytest1.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\main_enemytest1.cs",
               "RelativeDocumentMoniker": "main_enemytest1.cs",
@@ -128,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Enemy.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
@@ -140,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Spawners.cs",
               "DocumentMoniker": "D:\\CODING\\PBO\\godot\\WHISPERS OF THE VOID\\Whispers-Of-The-Void\\Spawners.cs",
               "RelativeDocumentMoniker": "Spawners.cs",

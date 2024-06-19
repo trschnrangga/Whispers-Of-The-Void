@@ -17,5 +17,5 @@ public partial class Entities : CharacterBody2D
 
 public interface IHittable
 {
-    void TakeDamage(int amount);
+	void TakeDamage(int amount);
 }

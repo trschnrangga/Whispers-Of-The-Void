@@ -31,18 +31,18 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	private Vector2 headleft, headright;
 	private gameover gameOver;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		headleft = new Vector2(-1, 1);
 		headright = new Vector2(1, 1);
 		sceneRoot = GetTree().CurrentScene;
-        catSprite = GetNode<AnimatedSprite2D>("Cat");
+		catSprite = GetNode<AnimatedSprite2D>("Cat");
 		catOriginalColor = catSprite.Modulate;
 		healthbar = GetNode<healthBar>("healthBar");
         healthbar.InitHealth(CatHealth);
 		gameOver = sceneRoot.GetNode<gameover>("GAMEOVER");
 
-    }
+	}
 	public void Directionals()
 	{
 		AnimatedSprite2D v_sprite = GetNode<AnimatedSprite2D>("Cat");
@@ -129,14 +129,14 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 			Vector2 notMoving = new Vector2(0,0);
 			Velocity = notMoving;
 		}
-    }
-    public override void _PhysicsProcess(double delta)
-    {
-        GetInput();
-        MoveAndSlide();
+	}
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();
+		MoveAndSlide();
 		Directionals();
 		//GD.Print(CatHealth);
-    }
+	}
 
 
 	public async void Dash()
