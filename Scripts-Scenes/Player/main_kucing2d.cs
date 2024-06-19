@@ -28,17 +28,17 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	private Direction lastDirection = Direction.idle;
 	private Vector2 headleft, headright;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		headleft = new Vector2(-1, 1);
 		headright = new Vector2(1, 1);
 		sceneRoot = GetTree().CurrentScene;
-        catSprite = GetNode<AnimatedSprite2D>("Cat");
+		catSprite = GetNode<AnimatedSprite2D>("Cat");
 		catOriginalColor = catSprite.Modulate;
 		healthbar = GetNode<healthBar>("healthBar");
-        healthbar.InitHealth(CatHealth);
+		healthbar.InitHealth(CatHealth);
 
-    }
+	}
 	public void Directionals()
 	{
 		AnimatedSprite2D v_sprite = GetNode<AnimatedSprite2D>("Cat");
@@ -70,11 +70,11 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 			}
 		}
 	}
-    public async void GetInput()
-    {
+	public async void GetInput()
+	{
 
-        Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-        Velocity = inputDirection * CatSpeed;
+		Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
+		Velocity = inputDirection * CatSpeed;
 		Velocity.Normalized();
 
 		if (Input.IsActionPressed("dash"))
@@ -109,14 +109,14 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 			}
 			canSlash = true;
 		}
-    }
-    public override void _PhysicsProcess(double delta)
-    {
-        GetInput();
-        MoveAndSlide();
+	}
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();
+		MoveAndSlide();
 		Directionals();
 		//GD.Print(CatHealth);
-    }
+	}
 
 
 	public async void Dash()
@@ -153,9 +153,9 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 			//game over/death animation
 		}
 		if (healthbar != null)
-        {
-            healthbar.SetHealth(CatHealth);
-        }
+		{
+			healthbar.SetHealth(CatHealth);
+		}
 	}
 
 	public async void Flash()

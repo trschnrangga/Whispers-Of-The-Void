@@ -71,9 +71,8 @@ texture_filter = 1
 position = Vector2(1.19209e-07, -3)
 scale = Vector2(0.841687, 0.818486)
 sprite_frames = SubResource("SpriteFrames_idlx0")
-animation = &"jalan"
+animation = &"IDLE"
 autoplay = "IDLE"
-frame_progress = 0.834526
 
 [node name="healthBar" parent="." instance=ExtResource("4_peda5")]
 z_index = 2
