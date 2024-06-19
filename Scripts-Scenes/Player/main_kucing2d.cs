@@ -20,6 +20,8 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	private bool canShoot = true;
 	private bool canDash = true;
 	private bool canSlash = true;
+	private bool isDead = false;
+	private bool healthbarRemoved = false;
 	private Color catOriginalColor;
 	private AnimatedSprite2D catSprite;
 	private healthBar healthbar;
@@ -27,96 +29,114 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 	public enum Direction {right, left, idle}
 	private Direction lastDirection = Direction.idle;
 	private Vector2 headleft, headright;
+	private gameover gameOver;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		headleft = new Vector2(-1, 1);
 		headright = new Vector2(1, 1);
 		sceneRoot = GetTree().CurrentScene;
-        catSprite = GetNode<AnimatedSprite2D>("Cat");
+		catSprite = GetNode<AnimatedSprite2D>("Cat");
 		catOriginalColor = catSprite.Modulate;
 		healthbar = GetNode<healthBar>("healthBar");
         healthbar.InitHealth(CatHealth);
+		gameOver = sceneRoot.GetNode<gameover>("GAMEOVER");
 
-    }
+	}
 	public void Directionals()
 	{
 		AnimatedSprite2D v_sprite = GetNode<AnimatedSprite2D>("Cat");
 		CharacterBody2D kucing = GetNode<CharacterBody2D>(".");
-		//Move Animation
-		if (Velocity.X > 1 || Velocity.X < -1 || Velocity.Y > 1 || Velocity.Y < -1){
-			v_sprite.Animation = "jalan";
+
+
+		if (!isDead)
+		{
+			//Move Animation
+			if (Velocity.X > 1 || Velocity.X < -1 || Velocity.Y > 1 || Velocity.Y < -1){
+				v_sprite.Animation = "jalan";
+			}
+			else
+			{
+				v_sprite.Animation = "IDLE";
+			}
+
+			//Direction following last direction
+			if (Velocity.X < 0){
+				v_sprite.FlipH = true;
+				lastDirection = Direction.left;
+			}
+			else if (Velocity.X > 0){
+				v_sprite.FlipH = false;
+				lastDirection = Direction.right;
+			}
+			else if (Velocity.X == 0){
+				if (lastDirection == Direction.left){
+					v_sprite.FlipH = true;
+				}
+				else if (lastDirection == Direction.left){
+					v_sprite.FlipH = false;
+				}
+			}
 		}
 		else
 		{
-			v_sprite.Animation = "IDLE";
-		}
-
-		//Direction following last direction
-		if (Velocity.X < 0){
-			v_sprite.FlipH = true;
-			lastDirection = Direction.left;
-		}
-		else if (Velocity.X > 0){
-			v_sprite.FlipH = false;
-			lastDirection = Direction.right;
-		}
-		else if (Velocity.X == 0){
-			if (lastDirection == Direction.left){
-				v_sprite.FlipH = true;
-			}
-			else if (lastDirection == Direction.left){
-				v_sprite.FlipH = false;
-			}
+			v_sprite.Animation = "DEAD";
 		}
 	}
     public async void GetInput()
     {
-
-        Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-        Velocity = inputDirection * CatSpeed;
-		Velocity.Normalized();
-
-		if (Input.IsActionPressed("dash"))
+		if (!isDead)
 		{
-			if (canDash && lastDirection != Direction.idle)
+			Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
+			Velocity = inputDirection * CatSpeed;
+			Velocity.Normalized();
+
+			if (Input.IsActionPressed("dash"))
 			{
-				canDash = false;
-				Dash();
-				await ToSignal(GetTree().CreateTimer(DashCooldown), SceneTreeTimer.SignalName.Timeout);
-				canDash = true;
+				if (canDash && lastDirection != Direction.idle)
+				{
+					canDash = false;
+					Dash();
+					await ToSignal(GetTree().CreateTimer(DashCooldown), SceneTreeTimer.SignalName.Timeout);
+					canDash = true;
+				}
+			}
+
+			if (canShoot)
+			{
+				canShoot = false;
+				if (Input.IsActionPressed("m2"))
+				{
+					ShootWave();
+					await ToSignal(GetTree().CreateTimer(ShootCooldown), SceneTreeTimer.SignalName.Timeout);
+				}
+				canShoot = true;
+			}
+
+			if (canSlash)
+			{
+				canSlash = false;
+				if (Input.IsActionPressed("m1"))
+				{
+					Slash();
+					await ToSignal(GetTree().CreateTimer(SlashCooldown), SceneTreeTimer.SignalName.Timeout);
+				}
+				canSlash = true;
 			}
 		}
-
-		if (canShoot)
+		else
 		{
-			canShoot = false;
-			if (Input.IsActionPressed("m2"))
-			{
-				ShootWave();
-				await ToSignal(GetTree().CreateTimer(ShootCooldown), SceneTreeTimer.SignalName.Timeout);
-			}
-			canShoot = true;
+			Vector2 notMoving = new Vector2(0,0);
+			Velocity = notMoving;
 		}
-
-		if (canSlash)
-		{
-			canSlash = false;
-			if (Input.IsActionPressed("m1"))
-			{
-				Slash();
-				await ToSignal(GetTree().CreateTimer(SlashCooldown), SceneTreeTimer.SignalName.Timeout);
-			}
-			canSlash = true;
-		}
-    }
-    public override void _PhysicsProcess(double delta)
-    {
-        GetInput();
-        MoveAndSlide();
+	}
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();
+		MoveAndSlide();
 		Directionals();
 		//GD.Print(CatHealth);
-    }
+	}
 
 
 	public async void Dash()
@@ -144,18 +164,30 @@ public partial class main_kucing2d : CharacterBody2D, IHittable
 		sceneRoot.GetNode("Entities/MainCat").AddChild(newSlash);
 		
 	}	
-	public void TakeDamage(int damage)
+	public async void TakeDamage(int damage)
 	{
-		CatHealth -= damage;
-		Flash();
-		if (CatHealth <= 0)
+		if (!healthbarRemoved)
 		{
-			//game over/death animation
+			CatHealth -= damage;
+			if (CatHealth >= 0)
+			{
+				
+				Flash();
+				healthbar.SetHealth(CatHealth);	
+			
+
+				//game over/death animation
+			}
+			else
+			{
+				isDead = true;
+				healthbar.Remove();
+				healthbarRemoved = true;
+				await ToSignal(GetTree().CreateTimer(2.5), SceneTreeTimer.SignalName.Timeout);
+				gameOver.Enabled();
+				
+			}
 		}
-		if (healthbar != null)
-        {
-            healthbar.SetHealth(CatHealth);
-        }
 	}
 
 	public async void Flash()

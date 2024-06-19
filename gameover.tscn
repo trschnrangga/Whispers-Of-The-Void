@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0mqjeuivgr3k"]
+
+[ext_resource type="FontFile" uid="uid://cu2jsnykpgg3n" path="res://Assets/Fonts/Pixellari.ttf" id="1_syrup"]
+[ext_resource type="Script" path="res://gameover.cs" id="1_ykrkt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s38vo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi1xw"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nowhm"]
+bg_color = Color(0.359069, 0.359069, 0.359069, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wc1fm"]
+
+[node name="GAMEOVER" type="CanvasLayer"]
+script = ExtResource("1_ykrkt")
+
+[node name="RetryButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -208.0
+offset_right = 28.5
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.165, 3.165)
+pivot_offset = Vector2(28.536, 10.634)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_syrup")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s38vo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pi1xw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nowhm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wc1fm")
+text = "RETRY"
+
+[node name="MenuButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.375
+offset_top = -86.0001
+offset_right = 48.375
+offset_bottom = -62.0001
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.055, 3.055)
+pivot_offset = Vector2(48.3622, 12.0645)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_syrup")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s38vo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pi1xw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nowhm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wc1fm")
+text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_top = 93.0
+offset_right = 61.5
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(4.75, 4.75)
+pivot_offset = Vector2(61.5752, 17.4654)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("1_syrup")
+text = "GAME OVER
+crazykiller died..."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

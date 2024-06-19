@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8r67ua4hahg4"]
+[gd_scene load_steps=14 format=3 uid="uid://b8r67ua4hahg4"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_xf17e"]
 [ext_resource type="Texture2D" uid="uid://bqxww0nqi20gc" path="res://Assets/Background/bgblack.png" id="2_rcybu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts-Scenes/Enemy.cs" id="6_hkc35"]
 [ext_resource type="PackedScene" uid="uid://cu71o3tryg66n" path="res://score_text.tscn" id="9_gqh8k"]
 [ext_resource type="PackedScene" uid="uid://coohf5vpc345o" path="res://score_manager.tscn" id="10_7x66e"]
+[ext_resource type="PackedScene" uid="uid://b0mqjeuivgr3k" path="res://gameover.tscn" id="11_lvotr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edl04"]
 texture = ExtResource("3_6qyso")
@@ -89,5 +90,7 @@ offset_bottom = 30.0
 scale = Vector2(2.905, 2.905)
 
 [node name="ScoreManager" parent="." instance=ExtResource("10_7x66e")]
+
+[node name="GAMEOVER" parent="." instance=ExtResource("11_lvotr")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

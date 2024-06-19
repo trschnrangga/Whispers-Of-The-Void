@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections;
 
 
 public partial class healthBar : ProgressBar
@@ -22,12 +23,6 @@ public partial class healthBar : ProgressBar
 		var prev_health = health;
 		health = min(MaxValue, new_health);
 		Value = health;
-
-
-		if (health <= 0)
-		{
-			QueueFree();
-		}
 
 		if (health < prev_health)
 		{
@@ -59,6 +54,11 @@ public partial class healthBar : ProgressBar
 		{
 			return a;
 		}
+	}
+
+	public void Remove()
+	{
+		QueueFree();
 	}
 
 }
