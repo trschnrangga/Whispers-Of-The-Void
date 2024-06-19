@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://7x67r2jsntpe"]
+
+[ext_resource type="Script" path="res://Scripts-Scenes/Enemies/EyeBat/main_enemytest1.cs" id="1_8vwlc"]
+[ext_resource type="Texture2D" uid="uid://d8dt3rhk2g0c" path="res://Assets/Enemies/desert-insect-enemy.png" id="2_anqrh"]
+[ext_resource type="PackedScene" uid="uid://04o0gq1q48ir" path="res://health_bar.tscn" id="3_6sx5p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu8ww"]
+radius = 7.34188
+height = 53.8802
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fysla"]
+atlas = ExtResource("2_anqrh")
+region = Rect2(0, 0, 288, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q0ot"]
+atlas = ExtResource("2_anqrh")
+region = Rect2(288, 0, 288, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc2y0"]
+atlas = ExtResource("2_anqrh")
+region = Rect2(576, 0, 288, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwe7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fysla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q0ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc2y0")
+}],
+"loop": true,
+"name": &"jalan",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hs3f"]
+radius = 26.1722
+height = 186.651
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4u35"]
+bg_color = Color(0.420402, 0.72088, 0.443088, 1)
+
+[node name="Insect" type="CharacterBody2D"]
+z_index = 2
+scale = Vector2(0.160728, 0.211218)
+collision_mask = 2
+motion_mode = 1
+platform_floor_layers = 4294967040
+script = ExtResource("1_8vwlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.14713e-06, -2.36722)
+rotation = 1.5708
+scale = Vector2(2.25699, 3.00229)
+shape = SubResource("CapsuleShape2D_pu8ww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_qwe7l")
+animation = &"jalan"
+autoplay = "jalan"
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -2.5)
+rotation = 1.5708
+scale = Vector2(1.01449, 1)
+shape = SubResource("CapsuleShape2D_7hs3f")
+
+[node name="healthBar" parent="." instance=ExtResource("3_6sx5p")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.1085
+offset_top = -28.4067
+offset_right = -14.1085
+offset_bottom = -27.4067
+grow_horizontal = 2
+scale = Vector2(3.715, 3.715)
+theme_override_styles/fill = SubResource("StyleBoxFlat_h4u35")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

@@ -22,9 +22,11 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
 	private ScoreManager _scoreManager;
 	private bool bodyEntered = false;
 	private bool canDamageOverlapping = true;
+	private Vector2 dir;
 
 	public override void _Ready()
 	{
+		dir = new Vector2();	
 		Node sceneRoot = GetTree().CurrentScene;
 		_player = sceneRoot.GetNode<CharacterBody2D>("Entities/MainCat");
 		_eyeSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -38,6 +40,15 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
 
 	public override async void _PhysicsProcess(double delta)
 	{
+		if (Velocity.X > 0)
+		{
+			_eyeSprite.FlipH = true;
+		}
+		if (Velocity.X < 0) 
+		{
+			_eyeSprite.FlipH = false;
+		}
+
 		// Move towards the player
 		if (_player is CharacterBody2D player)
 		{
