@@ -83,6 +83,7 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
             await ToSignal(GetTree().CreateTimer(flashDuration), SceneTreeTimer.SignalName.Timeout);
             _scoreManager.AddScore(GetScoreValue());
             QueueFree();
+            healthbar.Remove();
         }
         if (healthbar != null)
         {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6nrvli3ptno5"]
+[gd_scene load_steps=15 format=3 uid="uid://b6nrvli3ptno5"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_1sscc"]
 [ext_resource type="Texture2D" uid="uid://ce131o1n0t0ca" path="res://Assets/Environment/desert.png" id="2_kg3rv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Spawners.cs" id="7_trtpe"]
 [ext_resource type="PackedScene" uid="uid://cu71o3tryg66n" path="res://score_text.tscn" id="8_6bp4g"]
 [ext_resource type="PackedScene" uid="uid://coohf5vpc345o" path="res://score_manager.tscn" id="9_m6ste"]
+[ext_resource type="PackedScene" uid="uid://b0mqjeuivgr3k" path="res://gameover.tscn" id="11_o417l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rye43"]
 texture = ExtResource("2_kg3rv")
@@ -751,5 +752,7 @@ offset_bottom = 26.0
 scale = Vector2(3.945, 3.945)
 
 [node name="ScoreManager" parent="." instance=ExtResource("9_m6ste")]
+
+[node name="GAMEOVER" parent="." instance=ExtResource("11_o417l")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
