@@ -5,18 +5,21 @@ using System.Diagnostics;
 
 public partial class Spawners : Node2D
 {
-	public PackedScene scene = ResourceLoader.Load<PackedScene>("res://Scenes/desert_insect_enemy.tscn");
+	public PackedScene scene;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
+		string currSceneRootName = GetTree().Root.GetChild(1).Name;
+        string rootNodePath = currSceneRootName == "main" ? "res://Scenes/main_enemytest1.tscn" : "res://Scenes/desert_insect_enemy.tscn";
+        scene = ResourceLoader.Load<PackedScene>(rootNodePath);
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
-	}
+        GD.Print(GetTree().Root.GetChild(1).Name);
+    }
 
 	public void SpawnCharacter()
 	{
