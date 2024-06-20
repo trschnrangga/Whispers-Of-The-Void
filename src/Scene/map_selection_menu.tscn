@@ -11,22 +11,22 @@ default_font = ExtResource("1_ehvld")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbrq1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6mv8"]
 bg_color = Color(0.152941, 0.152941, 0.152941, 1)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i1sa"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04bmn"]
 bg_color = Color(0.152941, 0.152941, 0.152941, 1)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [node name="map_selection_menu" type="Control"]

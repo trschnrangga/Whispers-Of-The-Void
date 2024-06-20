@@ -10,22 +10,22 @@ default_font = ExtResource("1_tf5na")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3s1i"]
 bg_color = Color(0.137255, 0.133333, 0.129412, 0)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2sjb"]
 bg_color = Color(0.137255, 0.133333, 0.129412, 1)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1jqh"]
 bg_color = Color(0.137255, 0.133333, 0.129412, 0)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nry11"]
 bg_color = Color(0.154876, 0.154876, 0.154876, 1)
-border_width_bottom = 1
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ijp1"]

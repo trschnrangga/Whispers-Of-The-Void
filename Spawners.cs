@@ -18,7 +18,7 @@ public partial class Spawners : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        GD.Print(GetTree().Root.GetChild(1).Name);
+
     }
 
 	public void SpawnCharacter()
