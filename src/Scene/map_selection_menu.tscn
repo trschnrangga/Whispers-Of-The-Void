@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://g0s454gkxvob"]
 
 [ext_resource type="FontFile" uid="uid://dka324t3wt567" path="res://src/font/Pixellari.ttf" id="1_ehvld"]
-[ext_resource type="Texture2D" uid="uid://c7u6tawcc5ogx" path="res://Assets/UI/map_selection_menu/map-1-map-2.png" id="2_uumm6"]
+[ext_resource type="Texture2D" uid="uid://bfoa3qyuy3thv" path="res://Assets/UI/map_selection_menu/map_selection_v2.png" id="2_2ney2"]
 [ext_resource type="Script" path="res://src/Script/BtnMap1.cs" id="3_htslv"]
 [ext_resource type="Script" path="res://src/Script/BtnMap2.cs" id="4_82hso"]
 [ext_resource type="Script" path="res://src/Scene/BtnBack.cs" id="5_qjflx"]
@@ -48,7 +48,7 @@ offset_bottom = 418.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.625102, 0.632437)
-texture = ExtResource("2_uumm6")
+texture = ExtResource("2_2ney2")
 
 [node name="MarginContainer" type="MarginContainer" parent="background"]
 layout_mode = 0

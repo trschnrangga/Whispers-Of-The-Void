@@ -1,44 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://big171l8di63w"]
+[gd_scene load_steps=5 format=3 uid="uid://big171l8di63w"]
 
 [ext_resource type="FontFile" uid="uid://dka324t3wt567" path="res://src/font/Pixellari.ttf" id="1_tf5na"]
-[ext_resource type="Texture2D" uid="uid://caipa0l0lfjmc" path="res://Assets/UI/main_menu/WOTV-MENU.png" id="2_so3u2"]
-[ext_resource type="Script" path="res://src/Script/BtnQuitGame.cs" id="3_crbq4"]
+[ext_resource type="Texture2D" uid="uid://itxwxh366ms" path="res://Assets/UI/main_menu/MAIN_MENU_V2.png" id="2_fiviy"]
 [ext_resource type="Script" path="res://src/Script/BtnPlayGame.cs" id="3_pbuo3"]
 
 [sub_resource type="Theme" id="Theme_86bch"]
 default_font = ExtResource("1_tf5na")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3s1i"]
-bg_color = Color(0.137255, 0.133333, 0.129412, 0)
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2sjb"]
-bg_color = Color(0.137255, 0.133333, 0.129412, 1)
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1jqh"]
-bg_color = Color(0.137255, 0.133333, 0.129412, 0)
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nry11"]
-bg_color = Color(0.154876, 0.154876, 0.154876, 1)
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ijp1"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -53,13 +20,15 @@ scale = Vector2(0.631232, 0.642398)
 theme = SubResource("Theme_86bch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 1994.0
 offset_bottom = 1099.0
 scale = Vector2(1.02, 1.02)
-texture = ExtResource("2_so3u2")
+texture = ExtResource("2_fiviy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,58 +37,20 @@ offset_right = 76.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 100
+theme_override_constants/margin_left = 600
 theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
+theme_override_constants/margin_right = 600
 theme_override_constants/margin_bottom = 100
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(600, 0)
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 60
-
-[node name="BtnPlayGame" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_n3s1i")
-theme_override_styles/hover = SubResource("StyleBoxFlat_b2sjb")
-text = "Play"
-alignment = 0
+theme_override_font_sizes/font_size = 100
+text = "Play
+"
 script = ExtResource("3_pbuo3")
 
-[node name="BtnQuitGame" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_a1jqh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nry11")
-text = "Quit"
-alignment = 0
-script = ExtResource("3_crbq4")
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_2ijp1")
-text = "WHISPERS 
-OF 
-THE 
-VOID"
-
-[connection signal="button_down" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/BtnPlayGame" to="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/BtnPlayGame" method="_On_Button_Play_Pressed"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/BtnQuitGame" to="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/BtnQuitGame" method="_On_Button_Exit_Pressed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/Button" to="MarginContainer/VBoxContainer/Button" method="_On_Button_Play_Pressed"]
