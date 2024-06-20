@@ -20,19 +20,19 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
 	private CharacterBody2D _player;
 	private healthBar healthbar;
 	private ScoreManager _scoreManager;
+	private AudioStreamPlayer2D onHit;
 	private bool bodyEntered = false;
 	private bool canDamageOverlapping = true;
-	private Vector2 dir;
 
 	public override void _Ready()
 	{
-		dir = new Vector2();	
 		Node sceneRoot = GetTree().CurrentScene;
 		_player = sceneRoot.GetNode<CharacterBody2D>("Entities/MainCat");
 		_eyeSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_originalColor = _eyeSprite.Modulate;
 		_hurtBox = GetNode<Area2D>("HurtBox"); // Assume your Area2D node is named "HurtBox"
 		healthbar = GetNode<healthBar>("healthBar");
+		//onHit = GetNode<AudioStreamPlayer2D>("onHit");
 		healthbar.InitHealth(EyeHealth);
 		_scoreManager = sceneRoot.GetNode<ScoreManager>("ScoreManager");
 
@@ -88,7 +88,8 @@ public partial class main_enemytest1 : CharacterBody2D, IHittable, IScoreable
 
     public async void TakeDamage(int bulletDamage)
     {
-        EyeHealth -= bulletDamage;  
+        EyeHealth -= bulletDamage;
+		//onHit.Play();
         Flash();
         if (EyeHealth <= 0)
         {   

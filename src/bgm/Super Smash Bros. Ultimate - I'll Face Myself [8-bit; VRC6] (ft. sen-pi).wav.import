@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bctbewnygv23a"
+path="res://.godot/imported/Super Smash Bros. Ultimate - I'll Face Myself [8-bit; VRC6] (ft. sen-pi).wav-53f5961aba694e6aebded62e309a0a7c.sample"
+
+[deps]
+
+source_file="res://src/bgm/Super Smash Bros. Ultimate - I'll Face Myself [8-bit; VRC6] (ft. sen-pi).wav"
+dest_files=["res://.godot/imported/Super Smash Bros. Ultimate - I'll Face Myself [8-bit; VRC6] (ft. sen-pi).wav-53f5961aba694e6aebded62e309a0a7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

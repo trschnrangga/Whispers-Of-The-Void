@@ -80,7 +80,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("1_syrup")
 text = "GAME OVER
-crazykiller died..."
+you died..."
 horizontal_alignment = 1
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

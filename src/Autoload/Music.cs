@@ -6,7 +6,7 @@ public partial class Music : AudioStreamPlayer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Stream = GD.Load<AudioStream>("res://src/bgm/2019-08-25_-_8bit-Smooth_Presentation_-_David_Fesliyan.mp3");
+		Stream = GD.Load<AudioStream>("res://src/bgm/Super Smash Bros. Ultimate - I'll Face Myself [8-bit; VRC6] (ft. sen-pi).wav");
 		VolumeDb = -20;
 		Play();
 	}
